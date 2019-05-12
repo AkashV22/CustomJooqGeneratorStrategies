@@ -16,18 +16,8 @@
 
 package com.akashv22.jooq.customjooqgeneratorstrategies;
 
-import org.jooq.codegen.DefaultGeneratorStrategy;
-import org.jooq.meta.Definition;
-
-public class TableSuffixGeneratorStrategy extends DefaultGeneratorStrategy {
-    @Override
-    public String getJavaClassName(final Definition definition, final Mode mode) {
-        final String javaClassName = super.getJavaClassName(definition, mode);
-
-        if (mode == Mode.RECORD) {
-            return javaClassName.substring(0, javaClassName.length() - "Record".length()) + "TableRecord";
-        }
-
-        return javaClassName + "Table";
+public class TableClassNameSuffixGeneratorStrategy extends CustomClassNameSuffixGeneratorStrategy {
+    public TableClassNameSuffixGeneratorStrategy() {
+        super("Table", "TableRecord", "TableModel", "TableModel", "", "", "TableDao");
     }
 }
