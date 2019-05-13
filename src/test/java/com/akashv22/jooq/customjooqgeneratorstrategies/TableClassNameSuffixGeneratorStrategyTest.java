@@ -16,10 +16,6 @@
 
 package com.akashv22.jooq.customjooqgeneratorstrategies;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Properties;
-import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.h2.Driver;
 import org.jooq.codegen.GenerationTool;
 import org.jooq.codegen.JavaGenerator;
@@ -32,9 +28,14 @@ import org.jooq.meta.jaxb.Jdbc;
 import org.jooq.meta.jaxb.Strategy;
 import org.jooq.meta.jaxb.Target;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-@Ignore // TODO Remove @Ignore.
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+
+@Disabled // TODO Remove @Disabled.
 public class TableClassNameSuffixGeneratorStrategyTest {
     private static String projectBuildDir;
 
