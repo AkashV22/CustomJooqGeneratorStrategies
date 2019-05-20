@@ -1,0 +1,46 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1.0.0
+      author: akash.vadher
+      changes:
+        - createTable:
+            tableName: Game
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: year
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: dateAdded
+                  type: datetime
+                  constraints:
+                    nullable: false
+              - column:
+                  name: dateUpdated
+                  type: datetime
+                  constraints:
+                    nullable: true
+              - column:
+                  name: deleted
+                  type: boolean
+                  defaultValueBoolean: false
+                  constraints:
+                    nullable: false
+              - column:
+                  name: dateDeleted
+                  type: datetime
+                  constraints:
+                    nullable: true
